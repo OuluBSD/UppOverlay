@@ -111,5 +111,28 @@ src_install() {
 
 ---
 
-## 5. License
+## 5. Current Registered Packages (16)
+
+| Atom | Description | Upstream Repository |
+|---|---|---|
+| `AiAgents/SuperIntelligence-0.1.0` | Autonomous AI agent framework, MCP, and Playground | [OuluBSD/SuperIntelligence](https://github.com/OuluBSD/SuperIntelligence) |
+| `DevCpp/AgentIPC-0.1.0` | Cross-platform inter-process communication for AI agents | [OuluLinux/AgentIPC](https://github.com/OuluLinux/AgentIPC) |
+| `DevCpp/BazaarCore-0.1.0` | Foundation assembly, Core/Ext, and Tier 3 packages | [OuluBSD/BazaarCore](https://github.com/OuluBSD/BazaarCore) |
+| `DevCpp/Eon-0.1.0` | Eon Dataflow, ECS Engine, Node Scripting, and Workbench | [OuluBSD/Eon](https://github.com/OuluBSD/Eon) |
+| `DevCpp/VFS-0.1.0` | Virtual File System, Component Extensions, and Shell | [OuluBSD/VFS](https://github.com/OuluBSD/VFS) |
+| `DevUtil/UppBootstrap-0.1.0` | Bootstrap compiler for U++ umk meta-builder | [OuluBSD/UppBootstrap](https://github.com/OuluBSD/UppBootstrap) |
+| `DevUtil/UppBuilder-0.1.0` | Advanced U++ Meta-Builder with Portage-style USE flags | [OuluBSD/UppBuilder](https://github.com/OuluBSD/UppBuilder) |
+| `MediaGfx/Scene3D-0.1.0` | 3D scene graph, SoftRend rasterizer, and ModelerApp | [OuluBSD/Scene3D](https://github.com/OuluBSD/Scene3D) |
+| `MediaGfx/Shaders-0.1.0` | GPU shader pipeline, ShaderToy player, and GraphLib | [OuluBSD/Shaders](https://github.com/OuluBSD/Shaders) |
+| `MediaSound/SoftAudio-0.1.0` | Audio synthesis, MIDI sequencing, and SoundCtrl | [OuluBSD/SoftAudio](https://github.com/OuluBSD/SoftAudio) |
+| `MediaVideo/SoftVideo-0.1.0` | Video streaming, decoding, playback, and RasterPlayer | [OuluBSD/SoftVideo](https://github.com/OuluBSD/SoftVideo) |
+| `Virtual/Png-1` | Virtual capability provider for libpng | [libpng](https://www.libpng.org/) |
+| `Virtual/Sqlite-3` | Virtual capability provider for SQLite3 | [SQLite](https://www.sqlite.org/) |
+| `Virtual/Ssl-1` | Virtual capability provider for OpenSSL / TLS | [OpenSSL](https://www.openssl.org/) |
+| `Virtual/Zlib-1` | Virtual capability provider for zlib | [zlib](https://www.zlib.net/) |
+| `X11Wm/UppDesktop-0.1.0` | Modular X11 desktop environment, TaskBar, DisplayManager | [OuluBSD/UppDesktop](https://github.com/OuluBSD/UppDesktop) |
+
+---
+
+## 6. License
 BSD 2-Clause License.
