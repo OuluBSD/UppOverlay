@@ -24,4 +24,6 @@ src_compile() {
 	UppBuild("SuperIntelligence/Provider");
 	UppBuild("MCP");
 	UppBuild("tests/McpCheck");
+	UppBuild("Analysis/CorpusScore");
+	UppBuild("tests/CorpusScoreCheck");
 }

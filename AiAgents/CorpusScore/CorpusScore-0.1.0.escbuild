@@ -1,0 +1,23 @@
+DESCRIPTION = "CorpusScore: Headless personal writing corpus scoring CLI and analysis model";
+HOMEPAGE = "https://github.com/OuluBSD/SuperIntelligence";
+GIT_REPO = "https://github.com/OuluBSD/SuperIntelligence.git";
+GIT_BRANCH = "main";
+UPP_ASSEMBLY = "uppsrc,tests";
+DEFAULT_PACKAGE = "uppsrc/Analysis/CorpusScore";
+
+IUSE = [ "blitz", "debug", "shared" ];
+ACCEPTFLAGS = [ "BLITZ", "DEBUG", "SHARED", "POSIX", "LINUX", "WIN32" ];
+
+RDEPEND = [
+	"DevCpp/BazaarCore",
+	"DevUtil/UppBuilder"
+];
+
+src_unpack() {
+	GitCheckout(GIT_REPO, GIT_BRANCH);
+}
+
+src_compile() {
+	UppBuild("Analysis/CorpusScore");
+	UppBuild("tests/CorpusScoreCheck");
+}
