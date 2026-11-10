@@ -1,0 +1,23 @@
+DESCRIPTION = "Shaders: GPU shader pipeline, ShaderToy player, GraphLib, and ShaderDownloader";
+HOMEPAGE = "https://github.com/OuluBSD/Shaders";
+GIT_REPO = "https://github.com/OuluBSD/Shaders.git";
+GIT_BRANCH = "main";
+UPP_ASSEMBLY = "uppsrc,tests";
+DEFAULT_PACKAGE = "uppsrc/GraphLib";
+
+IUSE = [ "blitz", "debug", "gui", "shared", "opengl" ];
+ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "OPENGL", "POSIX", "LINUX", "WIN32" ];
+
+RDEPEND = [
+	"DevCpp/BazaarCore",
+	"DevUtil/UppBuilder"
+];
+
+src_unpack() {
+	GitCheckout(GIT_REPO, GIT_BRANCH);
+}
+
+src_compile() {
+	UppBuild("GraphLib");
+	UppBuild("tests/ShaderCheck");
+}

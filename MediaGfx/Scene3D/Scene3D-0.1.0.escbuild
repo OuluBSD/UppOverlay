@@ -1,0 +1,23 @@
+DESCRIPTION = "Scene3D: 3D scene graph, SoftRend software rasterizer, animation, and ModelerApp";
+HOMEPAGE = "https://github.com/OuluBSD/Scene3D";
+GIT_REPO = "https://github.com/OuluBSD/Scene3D.git";
+GIT_BRANCH = "main";
+UPP_ASSEMBLY = "uppsrc,tests";
+DEFAULT_PACKAGE = "uppsrc/Scene3D";
+
+IUSE = [ "blitz", "debug", "gui", "shared", "opengl" ];
+ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "OPENGL", "POSIX", "LINUX", "WIN32" ];
+
+RDEPEND = [
+	"DevCpp/BazaarCore",
+	"DevUtil/UppBuilder"
+];
+
+src_unpack() {
+	GitCheckout(GIT_REPO, GIT_BRANCH);
+}
+
+src_compile() {
+	UppBuild("Scene3D");
+	UppBuild("tests/SceneCheck");
+}

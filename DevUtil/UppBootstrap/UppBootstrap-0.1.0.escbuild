@@ -1,0 +1,19 @@
+DESCRIPTION = "Cross-platform bootstrap compiler for U++ umk meta-builder";
+HOMEPAGE = "https://github.com/OuluBSD/UppBootstrap";
+GIT_REPO = "https://github.com/OuluBSD/UppBootstrap.git";
+GIT_BRANCH = "main";
+DEFAULT_PACKAGE = "umk";
+
+IUSE = [ "debug" ];
+ACCEPTFLAGS = [ "DEBUG" ];
+
+src_unpack() {
+	GitCheckout(GIT_REPO, GIT_BRANCH);
+}
+
+src_compile() {
+	if (HostOs() == "windows")
+		Exec("bootstrap.cmd");
+	else
+		Exec("./bootstrap.sh");
+}

@@ -1,0 +1,23 @@
+DESCRIPTION = "SoftVideo: Video streaming, decoding, playback, and RasterPlayer widgets";
+HOMEPAGE = "https://github.com/OuluBSD/SoftVideo";
+GIT_REPO = "https://github.com/OuluBSD/SoftVideo.git";
+GIT_BRANCH = "main";
+UPP_ASSEMBLY = "uppsrc,tests";
+DEFAULT_PACKAGE = "uppsrc/VideoCore";
+
+IUSE = [ "blitz", "debug", "gui", "shared" ];
+ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "POSIX", "LINUX", "WIN32" ];
+
+RDEPEND = [
+	"DevCpp/BazaarCore",
+	"DevUtil/UppBuilder"
+];
+
+src_unpack() {
+	GitCheckout(GIT_REPO, GIT_BRANCH);
+}
+
+src_compile() {
+	UppBuild("VideoCore");
+	UppBuild("tests/VideoCheck");
+}

@@ -1,0 +1,23 @@
+DESCRIPTION = "SoftAudio: High-performance audio synthesis, MIDI sequencing, and SoundCtrl widgets";
+HOMEPAGE = "https://github.com/OuluBSD/SoftAudio";
+GIT_REPO = "https://github.com/OuluBSD/SoftAudio.git";
+GIT_BRANCH = "main";
+UPP_ASSEMBLY = "uppsrc,tests";
+DEFAULT_PACKAGE = "uppsrc/SoftAudio";
+
+IUSE = [ "blitz", "debug", "gui", "shared", "portaudio" ];
+ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "PORTAUDIO", "POSIX", "LINUX", "WIN32" ];
+
+RDEPEND = [
+	"DevCpp/BazaarCore",
+	"DevUtil/UppBuilder"
+];
+
+src_unpack() {
+	GitCheckout(GIT_REPO, GIT_BRANCH);
+}
+
+src_compile() {
+	UppBuild("SoftAudio");
+	UppBuild("tests/SoftAudioCheck");
+}

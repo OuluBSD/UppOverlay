@@ -1,0 +1,25 @@
+DESCRIPTION = "UppDesktop: Modular X11 desktop environment, TaskBar, DisplayManager, and Explorer";
+HOMEPAGE = "https://github.com/OuluBSD/UppDesktop";
+GIT_REPO = "https://github.com/OuluBSD/UppDesktop.git";
+GIT_BRANCH = "main";
+UPP_ASSEMBLY = "uppsrc,tests";
+DEFAULT_PACKAGE = "uppsrc/DesktopSuite";
+
+IUSE = [ "blitz", "debug", "gui", "shared", "x11" ];
+ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "X11", "POSIX", "LINUX" ];
+
+RDEPEND = [
+	"DevCpp/BazaarCore",
+	"DevCpp/VFS",
+	"DevUtil/UppBuilder"
+];
+
+src_unpack() {
+	GitCheckout(GIT_REPO, GIT_BRANCH);
+}
+
+src_compile() {
+	UppBuild("DesktopModel");
+	UppBuild("DesktopSuite");
+	UppBuild("tests/DesktopModelCheck");
+}

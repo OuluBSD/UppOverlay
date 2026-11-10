@@ -1,0 +1,27 @@
+DESCRIPTION = "SuperIntelligence: Autonomous AI agent framework, Model Context Protocol (MCP), and Playground";
+HOMEPAGE = "https://github.com/OuluBSD/SuperIntelligence";
+GIT_REPO = "https://github.com/OuluBSD/SuperIntelligence.git";
+GIT_BRANCH = "main";
+UPP_ASSEMBLY = "uppsrc,tests,examples";
+DEFAULT_PACKAGE = "uppsrc/SuperIntelligence/Provider";
+
+IUSE = [ "blitz", "debug", "gui", "shared", "openai", "anthropic" ];
+ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "OPENAI", "ANTHROPIC", "POSIX", "LINUX", "WIN32" ];
+
+RDEPEND = [
+	"DevCpp/BazaarCore",
+	"DevCpp/VFS",
+	"DevUtil/UppBuilder",
+	"Virtual/Ssl",
+	"Virtual/Sqlite"
+];
+
+src_unpack() {
+	GitCheckout(GIT_REPO, GIT_BRANCH);
+}
+
+src_compile() {
+	UppBuild("SuperIntelligence/Provider");
+	UppBuild("MCP");
+	UppBuild("tests/McpCheck");
+}

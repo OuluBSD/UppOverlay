@@ -1,0 +1,21 @@
+DESCRIPTION = "Cross-platform inter-process communication protocol and daemon for AI agents";
+HOMEPAGE = "https://github.com/OuluLinux/AgentIPC";
+GIT_REPO = "https://github.com/OuluLinux/AgentIPC.git";
+GIT_BRANCH = "main";
+DEFAULT_PACKAGE = "agentipc";
+
+IUSE = [ "debug", "shared" ];
+ACCEPTFLAGS = [ "DEBUG", "SHARED", "POSIX", "LINUX", "WIN32" ];
+
+RDEPEND = [
+	"DevCpp/BazaarCore",
+	"DevUtil/UppBuilder"
+];
+
+src_unpack() {
+	GitCheckout(GIT_REPO, GIT_BRANCH);
+}
+
+src_compile() {
+	Exec("make");
+}
