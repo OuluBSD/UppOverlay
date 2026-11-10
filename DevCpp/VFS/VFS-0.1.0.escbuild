@@ -1,0 +1,24 @@
+DESCRIPTION = "Virtual File System, Hierarchical Data Trees, Component Extensions, and Shell";
+HOMEPAGE = "https://github.com/OuluBSD/VFS";
+GIT_REPO = "https://github.com/OuluBSD/VFS.git";
+GIT_BRANCH = "main";
+UPP_ASSEMBLY = "uppsrc";
+DEFAULT_PACKAGE = "uppsrc/Vfs/Shell";
+
+IUSE = [ "blitz", "debug", "gui", "shared", "ncurses" ];
+ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "NCURSES", "POSIX", "LINUX", "WIN32" ];
+
+RDEPEND = [
+	"DevCpp/BazaarCore",
+	"DevUtil/UppBuilder"
+];
+
+src_unpack() {
+	GitCheckout(GIT_REPO, GIT_BRANCH);
+}
+
+src_compile() {
+	UppBuild("Vfs/Shell");
+	UppBuild("tests/VfsShellTests");
+	UppBuild("tests/VfsTests");
+}
