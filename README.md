@@ -8,7 +8,7 @@
 
 Following the repository splitting of the monolithic `ai-upp` into focused autonomous repositories, `UppOverlay` provides:
 1. **Centralized Discovery & Catalog**: Single source of truth mapping all ecosystem packages to their owning Git repositories, assemblies, and dependencies.
-2. **Esc-Powered Ebuilds**: Package declarations and recipes written in U++'s native **Esc** scripting language, providing clean C/JS-like syntax, safe evaluation, and cross-platform flexibility without shell dependencies.
+2. **Esc-Powered Escbuilds**: Package declarations and recipes written in U++'s native **Esc** scripting language, providing clean C/JS-like syntax, safe evaluation, and cross-platform flexibility without shell dependencies.
 3. **Multi-Profile Simultaneous Realization**: Unlike Gentoo's single-system installation, `UppOverlay` supports simultaneous active profiles (`NativeClang`, `NativeGcc`, `MsvcX64`, `WasmBrowser`, etc.).
 4. **Build Deduplication via `acceptflags`**: Projects share build artifacts in a central global cache (`~/.cache/upp.out`) because packages declare explicit `ACCEPTFLAGS`, preventing unrelated application flags from triggering unnecessary rebuilds.
 5. **Cross-Platform Virtual Providers (`Virtual/*`)**: External dependencies (`Virtual/Sqlite`, `Virtual/Ssl`, `Virtual/Png`, `Virtual/Zlib`) cleanly map to native host managers (`apt-get`, `brew`, `vcpkg`) or fallback to bundled U++ plugins (`plugin/sqlite`, `plugin/png`).
@@ -33,29 +33,29 @@ UppOverlay/
 │       └── WasmBrowser/make.conf
 ├── DevCpp/
 │   └── BazaarCore/
-│       └── BazaarCore-0.1.0.ebuild
+│       └── BazaarCore-0.1.0.escbuild
 ├── DevUtil/
 │   ├── UppBuilder/
-│   │   └── UppBuilder-0.1.0.ebuild
+│   │   └── UppBuilder-0.1.0.escbuild
 │   └── UppBootstrap/
-│       └── UppBootstrap-0.1.0.ebuild
+│       └── UppBootstrap-0.1.0.escbuild
 ├── MediaSound/
 ├── MediaVideo/
 ├── MediaGfx/
 ├── AiAgents/
 ├── X11Wm/
 └── Virtual/
-    ├── Sqlite/Sqlite-3.ebuild
-    ├── Ssl/Ssl-1.ebuild
-    ├── Png/Png-1.ebuild
-    └── Zlib/Zlib-1.ebuild
+    ├── Sqlite/Sqlite-3.escbuild
+    ├── Ssl/Ssl-1.escbuild
+    ├── Png/Png-1.escbuild
+    └── Zlib/Zlib-1.escbuild
 ```
 
 ---
 
-## 3. Esc Ebuild Format Example
+## 3. Esc Escbuild Format Example
 
-Every `.ebuild` file is valid **Esc** code:
+Every `.escbuild` file is valid **Esc** code:
 
 ```esc
 DESCRIPTION = "BazaarCore: Foundation assembly, Core/Ext, and Tier 3 packages";
