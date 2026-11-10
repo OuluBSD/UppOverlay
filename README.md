@@ -111,19 +111,31 @@ src_install() {
 
 ---
 
-## 5. Current Registered Packages (16)
+## 5. Current Registered Packages (28)
 
 | Atom | Description | Upstream Repository |
 |---|---|---|
+| `AiAgents/Aria-0.1.0` | Browser automation, stealth CDP/Marionette scraping | [OuluBSD/Aria](https://github.com/OuluBSD/Aria) |
+| `AiAgents/ArtificialIntelligence-0.1.0` | Cognitive reasoning, neural search, knowledge graphs | [OuluBSD/ArtificialIntelligence](https://github.com/OuluBSD/ArtificialIntelligence) |
+| `AiAgents/CommandCenter-0.1.0` | Dropdown developer terminal (DropTerm) and runner | [OuluBSD/CommandCenter](https://github.com/OuluBSD/CommandCenter) |
 | `AiAgents/SuperIntelligence-0.1.0` | Autonomous AI agent framework, MCP, and Playground | [OuluBSD/SuperIntelligence](https://github.com/OuluBSD/SuperIntelligence) |
 | `DevCpp/AgentIPC-0.1.0` | Cross-platform inter-process communication for AI agents | [OuluLinux/AgentIPC](https://github.com/OuluLinux/AgentIPC) |
+| `DevCpp/BasicHtmlRenderer-0.1.0` | Native HTML/DOM rendering, virtual widgets, and bridge | [OuluBSD/BasicHtmlRenderer](https://github.com/OuluBSD/BasicHtmlRenderer) |
 | `DevCpp/BazaarCore-0.1.0` | Foundation assembly, Core/Ext, and Tier 3 packages | [OuluBSD/BazaarCore](https://github.com/OuluBSD/BazaarCore) |
 | `DevCpp/Eon-0.1.0` | Eon Dataflow, ECS Engine, Node Scripting, and Workbench | [OuluBSD/Eon](https://github.com/OuluBSD/Eon) |
+| `DevCpp/UppGeometry-0.1.0` | 3D geometry engine, vector math, spatial transforms | [OuluBSD/UppGeometry](https://github.com/OuluBSD/UppGeometry) |
 | `DevCpp/VFS-0.1.0` | Virtual File System, Component Extensions, and Shell | [OuluBSD/VFS](https://github.com/OuluBSD/VFS) |
+| `DevLang/SoftScript-0.1.0` | Multi-language bytecode VM, Python dialect, transpilers | [OuluBSD/SoftScript](https://github.com/OuluBSD/SoftScript) |
+| `DevLang/VisualScript-0.1.0` | Visual Script form designer, UI editor, and script IDE | [OuluBSD/VisualScript](https://github.com/OuluBSD/VisualScript) |
+| `DevUtil/Gubo-0.1.0` | Voxel, procedural 3D block engine, and OpenGL controls | [OuluBSD/Gubo](https://github.com/OuluBSD/Gubo) |
+| `DevUtil/IDE-0.1.0` | Modular TheIDE architecture and DevEnv environment | [OuluBSD/IDE](https://github.com/OuluBSD/IDE) |
 | `DevUtil/UppBootstrap-0.1.0` | Bootstrap compiler for U++ umk meta-builder | [OuluBSD/UppBootstrap](https://github.com/OuluBSD/UppBootstrap) |
 | `DevUtil/UppBuilder-0.1.0` | Advanced U++ Meta-Builder with Portage-style USE flags | [OuluBSD/UppBuilder](https://github.com/OuluBSD/UppBuilder) |
+| `Games/UppGame-0.1.0` | 2D/3D game engines, card games, and adventure runtime | [OuluBSD/UppGame](https://github.com/OuluBSD/UppGame) |
+| `MediaGfx/ComputerVision-0.1.0` | Computer vision, camera calibration, stereo disparity | [OuluBSD/ComputerVision](https://github.com/OuluBSD/ComputerVision) |
 | `MediaGfx/Scene3D-0.1.0` | 3D scene graph, SoftRend rasterizer, and ModelerApp | [OuluBSD/Scene3D](https://github.com/OuluBSD/Scene3D) |
 | `MediaGfx/Shaders-0.1.0` | GPU shader pipeline, ShaderToy player, and GraphLib | [OuluBSD/Shaders](https://github.com/OuluBSD/Shaders) |
+| `MediaGfx/UppXR-0.1.0` | XR, VR, HMD tracking, stereo vision, SoftVR | [OuluBSD/UppXR](https://github.com/OuluBSD/UppXR) |
 | `MediaSound/SoftAudio-0.1.0` | Audio synthesis, MIDI sequencing, and SoundCtrl | [OuluBSD/SoftAudio](https://github.com/OuluBSD/SoftAudio) |
 | `MediaVideo/SoftVideo-0.1.0` | Video streaming, decoding, playback, and RasterPlayer | [OuluBSD/SoftVideo](https://github.com/OuluBSD/SoftVideo) |
 | `Virtual/Png-1` | Virtual capability provider for libpng | [libpng](https://www.libpng.org/) |

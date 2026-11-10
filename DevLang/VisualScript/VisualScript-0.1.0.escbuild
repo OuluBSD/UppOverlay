@@ -1,0 +1,25 @@
+DESCRIPTION = "Visual Script Form Designer, UI Editor, and Script IDE";
+HOMEPAGE = "https://github.com/OuluBSD/VisualScript";
+GIT_REPO = "https://github.com/OuluBSD/VisualScript.git";
+GIT_BRANCH = "main";
+UPP_ASSEMBLY = "uppsrc,tests";
+DEFAULT_PACKAGE = "uppsrc/Form/Form";
+
+IUSE = [ "blitz", "debug", "gui", "shared" ];
+ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "POSIX", "LINUX", "WIN32" ];
+
+RDEPEND = [
+	"DevCpp/BazaarCore",
+	"DevLang/SoftScript",
+	"DevUtil/UppBuilder"
+];
+
+src_unpack() {
+	GitCheckout(GIT_REPO, GIT_BRANCH);
+}
+
+src_compile() {
+	UppBuild("Form/Form");
+	UppBuild("FormEditor");
+	UppBuild("ScriptIDE");
+}

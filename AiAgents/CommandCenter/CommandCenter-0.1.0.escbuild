@@ -1,0 +1,22 @@
+DESCRIPTION = "Quake-style Dropdown Developer Terminal (DropTerm) and Command Runner";
+HOMEPAGE = "https://github.com/OuluBSD/CommandCenter";
+GIT_REPO = "https://github.com/OuluBSD/CommandCenter.git";
+GIT_BRANCH = "main";
+UPP_ASSEMBLY = "DropTerm,examples";
+DEFAULT_PACKAGE = "DropTerm/DropTerm";
+
+IUSE = [ "blitz", "debug", "gui", "shared" ];
+ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "POSIX", "LINUX", "WIN32" ];
+
+RDEPEND = [
+	"DevCpp/BazaarCore",
+	"DevUtil/UppBuilder"
+];
+
+src_unpack() {
+	GitCheckout(GIT_REPO, GIT_BRANCH);
+}
+
+src_compile() {
+	UppBuild("DropTerm/DropTerm");
+}

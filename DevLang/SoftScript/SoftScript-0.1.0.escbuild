@@ -1,0 +1,23 @@
+DESCRIPTION = "SoftScript Multi-language Bytecode VM, Python dialect, Transpilers, and CLI Runners";
+HOMEPAGE = "https://github.com/OuluBSD/SoftScript";
+GIT_REPO = "https://github.com/OuluBSD/SoftScript.git";
+GIT_BRANCH = "main";
+UPP_ASSEMBLY = "uppsrc,tests";
+DEFAULT_PACKAGE = "uppsrc/ByteVM/ByteVM";
+
+IUSE = [ "blitz", "debug", "shared" ];
+ACCEPTFLAGS = [ "BLITZ", "DEBUG", "SHARED", "POSIX", "LINUX", "WIN32" ];
+
+RDEPEND = [
+	"DevCpp/BazaarCore",
+	"DevUtil/UppBuilder"
+];
+
+src_unpack() {
+	GitCheckout(GIT_REPO, GIT_BRANCH);
+}
+
+src_compile() {
+	UppBuild("ByteVM/ByteVM");
+	UppBuild("ScriptCLI");
+}
