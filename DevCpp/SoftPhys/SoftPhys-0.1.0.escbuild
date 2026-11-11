@@ -1,0 +1,28 @@
+DESCRIPTION = "Decoupled Physics Engine, Cloth Simulation, Rigid Bodies, and Spatial Partitioning";
+HOMEPAGE = "https://github.com/OuluBSD/SoftPhys";
+GIT_REPO = "https://github.com/OuluBSD/SoftPhys.git";
+GIT_BRANCH = "main";
+UPP_ASSEMBLY = "uppsrc,tests";
+DEFAULT_PACKAGE = "uppsrc/SoftPhys/SoftPhys";
+
+IUSE = [ "blitz", "debug", "shared" ];
+ACCEPTFLAGS = [ "BLITZ", "DEBUG", "SHARED", "POSIX", "LINUX", "WIN32" ];
+
+RDEPEND = [
+	"DevCpp/BazaarCore",
+	"DevCpp/UppGeometry",
+	"DevUtil/UppBuilder"
+];
+
+src_unpack() {
+	GitCheckout(GIT_REPO, GIT_BRANCH);
+}
+
+src_compile() {
+	UppBuild("SoftPhys");
+}
+
+src_test() {
+	UppBuild("tests/SoftPhysTests");
+	Run("SoftPhysTests");
+}
