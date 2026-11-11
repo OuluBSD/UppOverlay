@@ -1,0 +1,29 @@
+DESCRIPTION = "Virtual Graphics Hardware Abstraction Layer (HAL) with Typed Python Shaders & Software Rasterizer";
+HOMEPAGE = "https://github.com/OuluBSD/SoftGraphics";
+GIT_REPO = "https://github.com/OuluBSD/SoftGraphics.git";
+GIT_BRANCH = "main";
+UPP_ASSEMBLY = "uppsrc,tests";
+DEFAULT_PACKAGE = "uppsrc/SoftGraphics/SoftGraphics";
+
+IUSE = [ "blitz", "debug", "shared" ];
+ACCEPTFLAGS = [ "BLITZ", "DEBUG", "SHARED", "POSIX", "LINUX", "WIN32" ];
+
+RDEPEND = [
+	"DevCpp/BazaarCore",
+	"DevCpp/UppGeometry",
+	"DevLang/SoftScript",
+	"DevUtil/UppBuilder"
+];
+
+src_unpack() {
+	GitCheckout(GIT_REPO, GIT_BRANCH);
+}
+
+src_compile() {
+	UppBuild("SoftGraphics");
+}
+
+src_test() {
+	UppBuild("tests/SoftGraphicsTests");
+	Run("SoftGraphicsTests");
+}
