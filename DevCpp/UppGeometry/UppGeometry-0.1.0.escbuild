@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/OuluBSD/UppGeometry";
 GIT_REPO = "https://github.com/OuluBSD/UppGeometry.git";
 GIT_BRANCH = "main";
 UPP_ASSEMBLY = "uppsrc,tests";
-DEFAULT_PACKAGE = "uppsrc/Geometry/Geometry";
+DEFAULT_PACKAGE = "tests/GeometryCheck";
 
 IUSE = [ "blitz", "debug", "gui", "shared" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "POSIX", "LINUX", "WIN32" ];

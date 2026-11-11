@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/OuluBSD/SoftPhys";
 GIT_REPO = "https://github.com/OuluBSD/SoftPhys.git";
 GIT_BRANCH = "main";
 UPP_ASSEMBLY = "uppsrc,tests";
-DEFAULT_PACKAGE = "uppsrc/SoftPhys/SoftPhys";
+DEFAULT_PACKAGE = "tests/SoftPhysTests";
 
 IUSE = [ "blitz", "debug", "shared" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "SHARED", "POSIX", "LINUX", "WIN32" ];

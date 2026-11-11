@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/OuluLinux/ConvNetCpp";
 GIT_REPO = "https://github.com/OuluLinux/ConvNetCpp.git";
 GIT_BRANCH = "master";
 UPP_ASSEMBLY = "src";
-DEFAULT_PACKAGE = "src/ConvNet";
+DEFAULT_PACKAGE = "src/ConvNetTest";
 
 IUSE = [ "blitz", "debug", "shared" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "SHARED", "POSIX", "LINUX", "WIN32" ];

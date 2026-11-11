@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/OuluBSD/SoftGraphics";
 GIT_REPO = "https://github.com/OuluBSD/SoftGraphics.git";
 GIT_BRANCH = "main";
 UPP_ASSEMBLY = "uppsrc,tests";
-DEFAULT_PACKAGE = "uppsrc/SoftGraphics/SoftGraphics";
+DEFAULT_PACKAGE = "tests/SoftGraphicsTests";
 
 IUSE = [ "blitz", "debug", "shared" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "SHARED", "POSIX", "LINUX", "WIN32" ];
