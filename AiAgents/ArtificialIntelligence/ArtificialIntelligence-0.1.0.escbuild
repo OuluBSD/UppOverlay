@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/OuluBSD/ArtificialIntelligence";
 GIT_REPO = "https://github.com/OuluBSD/ArtificialIntelligence.git";
 GIT_BRANCH = "main";
 UPP_ASSEMBLY = "uppsrc,examples,tests";
-DEFAULT_PACKAGE = "uppsrc/AI/Base";
+DEFAULT_PACKAGE = "tests/AiTests";
 
 IUSE = [ "blitz", "debug", "gui", "shared" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "POSIX", "LINUX", "WIN32" ];
@@ -19,6 +19,9 @@ src_unpack() {
 
 src_compile() {
 	UppBuild("AI/Base");
-	UppBuild("AI/Logic");
-	UppBuild("TrustCore");
+	UppBuild("tests/AiTests");
+}
+
+src_test() {
+	Run("AiTests");
 }

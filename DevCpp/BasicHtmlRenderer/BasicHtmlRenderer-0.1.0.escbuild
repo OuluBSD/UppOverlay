@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/OuluBSD/BasicHtmlRenderer";
 GIT_REPO = "https://github.com/OuluBSD/BasicHtmlRenderer.git";
 GIT_BRANCH = "main";
 UPP_ASSEMBLY = "uppsrc,reference,tests";
-DEFAULT_PACKAGE = "uppsrc/HtmlGui/HtmlGui";
+DEFAULT_PACKAGE = "tests/HtmlCheck";
 
 IUSE = [ "blitz", "debug", "gui", "shared" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "POSIX", "LINUX", "WIN32" ];
@@ -19,5 +19,9 @@ src_unpack() {
 
 src_compile() {
 	UppBuild("HtmlGui/HtmlGui");
-	UppBuild("HtmlApp01");
+	UppBuild("tests/HtmlCheck");
+}
+
+src_test() {
+	Run("HtmlCheck");
 }

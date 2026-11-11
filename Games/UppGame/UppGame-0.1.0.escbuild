@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/OuluBSD/UppGame";
 GIT_REPO = "https://github.com/OuluBSD/UppGame.git";
 GIT_BRANCH = "main";
 UPP_ASSEMBLY = "uppsrc,game,tests";
-DEFAULT_PACKAGE = "uppsrc/GameLib/GameLib";
+DEFAULT_PACKAGE = "tests/GameCheck";
 
 IUSE = [ "blitz", "debug", "gui", "shared" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "POSIX", "LINUX", "WIN32" ];
@@ -20,5 +20,9 @@ src_unpack() {
 
 src_compile() {
 	UppBuild("GameLib/GameLib");
-	UppBuild("game/EscapeAdventure");
+	UppBuild("tests/GameCheck");
+}
+
+src_test() {
+	Run("GameCheck");
 }

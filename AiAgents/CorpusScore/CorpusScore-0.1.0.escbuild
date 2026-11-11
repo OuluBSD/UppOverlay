@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/OuluBSD/SuperIntelligence";
 GIT_REPO = "https://github.com/OuluBSD/SuperIntelligence.git";
 GIT_BRANCH = "main";
 UPP_ASSEMBLY = "uppsrc,tests";
-DEFAULT_PACKAGE = "uppsrc/Analysis/CorpusScore";
+DEFAULT_PACKAGE = "tests/CorpusScoreCheck";
 
 IUSE = [ "blitz", "debug", "shared" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "SHARED", "POSIX", "LINUX", "WIN32" ];
@@ -20,4 +20,8 @@ src_unpack() {
 src_compile() {
 	UppBuild("Analysis/CorpusScore");
 	UppBuild("tests/CorpusScoreCheck");
+}
+
+src_test() {
+	Run("CorpusScoreCheck");
 }

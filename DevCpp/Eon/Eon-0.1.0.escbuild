@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/OuluBSD/Eon";
 GIT_REPO = "https://github.com/OuluBSD/Eon.git";
 GIT_BRANCH = "main";
 UPP_ASSEMBLY = "uppsrc,examples";
-DEFAULT_PACKAGE = "uppsrc/Eon/Eon";
+DEFAULT_PACKAGE = "examples/EonDemo";
 
 IUSE = [ "blitz", "debug", "gui", "shared" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "POSIX", "LINUX", "WIN32" ];
@@ -21,4 +21,8 @@ src_unpack() {
 src_compile() {
 	UppBuild("Eon/Eon");
 	UppBuild("examples/EonDemo");
+}
+
+src_test() {
+	Run("EonDemo");
 }

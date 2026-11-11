@@ -2,14 +2,15 @@ DESCRIPTION = "Computer Vision processing, camera calibration, stereo disparity,
 HOMEPAGE = "https://github.com/OuluBSD/ComputerVision";
 GIT_REPO = "https://github.com/OuluBSD/ComputerVision.git";
 GIT_BRANCH = "main";
-UPP_ASSEMBLY = "ComputerVision,StereoCalibrationTool";
-DEFAULT_PACKAGE = "ComputerVision/ComputerVision";
+UPP_ASSEMBLY = "ComputerVision,StereoCalibrationTool,tests";
+DEFAULT_PACKAGE = "tests/CvCheck";
 
 IUSE = [ "blitz", "debug", "gui", "shared" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "POSIX", "LINUX", "WIN32" ];
 
 RDEPEND = [
 	"DevCpp/BazaarCore",
+	"DevCpp/UppGeometry",
 	"DevUtil/UppBuilder"
 ];
 
@@ -18,6 +19,10 @@ src_unpack() {
 }
 
 src_compile() {
-	UppBuild("ComputerVision/ComputerVision");
-	UppBuild("StereoCalibrationTool");
+	UppBuild("ComputerVision");
+	UppBuild("tests/CvCheck");
+}
+
+src_test() {
+	Run("CvCheck");
 }

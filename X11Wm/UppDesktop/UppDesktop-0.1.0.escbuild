@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/OuluBSD/UppDesktop";
 GIT_REPO = "https://github.com/OuluBSD/UppDesktop.git";
 GIT_BRANCH = "main";
 UPP_ASSEMBLY = "uppsrc,tests";
-DEFAULT_PACKAGE = "uppsrc/DesktopSuite";
+DEFAULT_PACKAGE = "tests/DesktopModelCheck";
 
 IUSE = [ "blitz", "debug", "gui", "shared", "x11" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "X11", "POSIX", "LINUX" ];
@@ -22,4 +22,8 @@ src_compile() {
 	UppBuild("DesktopModel");
 	UppBuild("DesktopSuite");
 	UppBuild("tests/DesktopModelCheck");
+}
+
+src_test() {
+	Run("DesktopModelCheck");
 }

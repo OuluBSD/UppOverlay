@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/OuluBSD/Gubo";
 GIT_REPO = "https://github.com/OuluBSD/Gubo.git";
 GIT_BRANCH = "main";
 UPP_ASSEMBLY = "uppsrc,tests";
-DEFAULT_PACKAGE = "uppsrc/GuboCore/GuboCore";
+DEFAULT_PACKAGE = "tests/GuboCheck";
 
 IUSE = [ "blitz", "debug", "gui", "shared" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "POSIX", "LINUX", "WIN32" ];
@@ -20,6 +20,9 @@ src_unpack() {
 
 src_compile() {
 	UppBuild("GuboCore/GuboCore");
-	UppBuild("GuboCtrl");
-	UppBuild("GuboSuite");
+	UppBuild("tests/GuboCheck");
+}
+
+src_test() {
+	Run("GuboCheck");
 }

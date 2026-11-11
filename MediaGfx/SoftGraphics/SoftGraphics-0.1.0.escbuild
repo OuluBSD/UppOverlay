@@ -21,9 +21,9 @@ src_unpack() {
 
 src_compile() {
 	UppBuild("SoftGraphics");
+	UppBuild("tests/SoftGraphicsTests");
 }
 
 src_test() {
-	UppBuild("tests/SoftGraphicsTests");
 	Run("SoftGraphicsTests");
 }

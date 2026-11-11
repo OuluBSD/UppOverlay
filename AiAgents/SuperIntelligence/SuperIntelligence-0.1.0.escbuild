@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/OuluBSD/SuperIntelligence";
 GIT_REPO = "https://github.com/OuluBSD/SuperIntelligence.git";
 GIT_BRANCH = "main";
 UPP_ASSEMBLY = "uppsrc,tests,examples";
-DEFAULT_PACKAGE = "uppsrc/SuperIntelligence/Provider";
+DEFAULT_PACKAGE = "tests/McpCheck";
 
 IUSE = [ "blitz", "debug", "gui", "shared", "openai", "anthropic" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "OPENAI", "ANTHROPIC", "POSIX", "LINUX", "WIN32" ];
@@ -26,4 +26,9 @@ src_compile() {
 	UppBuild("tests/McpCheck");
 	UppBuild("Analysis/CorpusScore");
 	UppBuild("tests/CorpusScoreCheck");
+}
+
+src_test() {
+	Run("McpCheck");
+	Run("CorpusScoreCheck");
 }

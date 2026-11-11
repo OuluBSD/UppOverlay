@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/OuluBSD/SoftScript";
 GIT_REPO = "https://github.com/OuluBSD/SoftScript.git";
 GIT_BRANCH = "main";
 UPP_ASSEMBLY = "uppsrc,tests";
-DEFAULT_PACKAGE = "uppsrc/ByteVM/ByteVM";
+DEFAULT_PACKAGE = "tests/PythonVM";
 
 IUSE = [ "blitz", "debug", "shared" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "SHARED", "POSIX", "LINUX", "WIN32" ];
@@ -19,5 +19,9 @@ src_unpack() {
 
 src_compile() {
 	UppBuild("ByteVM/ByteVM");
-	UppBuild("ScriptCLI");
+	UppBuild("tests/PythonVM");
+}
+
+src_test() {
+	Run("PythonVM");
 }

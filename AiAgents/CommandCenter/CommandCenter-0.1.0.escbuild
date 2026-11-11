@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/OuluBSD/CommandCenter";
 GIT_REPO = "https://github.com/OuluBSD/CommandCenter.git";
 GIT_BRANCH = "main";
 UPP_ASSEMBLY = "DropTerm,examples";
-DEFAULT_PACKAGE = "DropTerm/DropTerm";
+DEFAULT_PACKAGE = "DropTermDemo";
 
 IUSE = [ "blitz", "debug", "gui", "shared" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "POSIX", "LINUX", "WIN32" ];
@@ -18,5 +18,5 @@ src_unpack() {
 }
 
 src_compile() {
-	UppBuild("DropTerm/DropTerm");
+	UppBuild("DropTermDemo");
 }

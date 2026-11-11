@@ -19,9 +19,9 @@ src_unpack() {
 
 src_compile() {
 	UppBuild("src/ConvNet");
+	UppBuild("src/ConvNetTest");
 }
 
 src_test() {
-	UppBuild("src/ConvNetTest");
 	Run("ConvNetTest");
 }
