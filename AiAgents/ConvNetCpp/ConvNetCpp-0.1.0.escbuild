@@ -1,0 +1,27 @@
+DESCRIPTION = "Scientific Neural Network, Deep Learning Engine, Transformers & CUDA Acceleration";
+HOMEPAGE = "https://github.com/OuluLinux/ConvNetCpp";
+GIT_REPO = "https://github.com/OuluLinux/ConvNetCpp.git";
+GIT_BRANCH = "master";
+UPP_ASSEMBLY = "src";
+DEFAULT_PACKAGE = "src/ConvNet";
+
+IUSE = [ "blitz", "debug", "shared" ];
+ACCEPTFLAGS = [ "BLITZ", "DEBUG", "SHARED", "POSIX", "LINUX", "WIN32" ];
+
+RDEPEND = [
+	"DevCpp/BazaarCore",
+	"DevUtil/UppBuilder"
+];
+
+src_unpack() {
+	GitCheckout(GIT_REPO, GIT_BRANCH);
+}
+
+src_compile() {
+	UppBuild("src/ConvNet");
+}
+
+src_test() {
+	UppBuild("src/ConvNetTest");
+	Run("ConvNetTest");
+}
