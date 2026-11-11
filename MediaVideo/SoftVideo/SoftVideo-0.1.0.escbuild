@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/OuluBSD/SoftVideo";
 GIT_REPO = "https://github.com/OuluBSD/SoftVideo.git";
 GIT_BRANCH = "main";
 UPP_ASSEMBLY = "uppsrc,tests";
-DEFAULT_PACKAGE = "uppsrc/VideoCore";
+DEFAULT_PACKAGE = "tests/VideoCheck";
 
 IUSE = [ "blitz", "debug", "gui", "shared" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "POSIX", "LINUX", "WIN32" ];
@@ -20,4 +20,8 @@ src_unpack() {
 src_compile() {
 	UppBuild("VideoCore");
 	UppBuild("tests/VideoCheck");
+}
+
+src_test() {
+	Run("VideoCheck");
 }

@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/OuluBSD/SoftAudio";
 GIT_REPO = "https://github.com/OuluBSD/SoftAudio.git";
 GIT_BRANCH = "main";
 UPP_ASSEMBLY = "uppsrc,tests";
-DEFAULT_PACKAGE = "uppsrc/SoftAudio";
+DEFAULT_PACKAGE = "tests/SoftAudioCheck";
 
 IUSE = [ "blitz", "debug", "gui", "shared", "portaudio" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "PORTAUDIO", "POSIX", "LINUX", "WIN32" ];
@@ -18,6 +18,11 @@ src_unpack() {
 }
 
 src_compile() {
-	UppBuild("SoftAudio");
 	UppBuild("tests/SoftAudioCheck");
+}
+
+src_test() {
+	Run("SoftAudioCheck");
+	Run("MidiCheck");
+	Run("SynthCheck");
 }
