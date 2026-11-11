@@ -2,8 +2,8 @@ DESCRIPTION = "Modular TheIDE Architecture and DevEnv Environment";
 HOMEPAGE = "https://github.com/OuluBSD/IDE";
 GIT_REPO = "https://github.com/OuluBSD/IDE.git";
 GIT_BRANCH = "main";
-UPP_ASSEMBLY = "uppsrc";
-DEFAULT_PACKAGE = "uppsrc/DevEnv/App";
+UPP_ASSEMBLY = "uppsrc,tests";
+DEFAULT_PACKAGE = "tests/DevEnvCheck";
 
 IUSE = [ "blitz", "debug", "gui", "shared" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "POSIX", "LINUX", "WIN32" ];
@@ -19,4 +19,9 @@ src_unpack() {
 
 src_compile() {
 	UppBuild("DevEnv/App");
+	UppBuild("tests/DevEnvCheck");
+}
+
+src_test() {
+	Run("DevEnvCheck");
 }
