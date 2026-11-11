@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/OuluBSD/UppXR";
 GIT_REPO = "https://github.com/OuluBSD/UppXR.git";
 GIT_BRANCH = "main";
 UPP_ASSEMBLY = "uppsrc,examples,tests";
-DEFAULT_PACKAGE = "uppsrc/XRClient/XRClient";
+DEFAULT_PACKAGE = "tests/XRCheck";
 
 IUSE = [ "blitz", "debug", "gui", "shared" ];
 ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "POSIX", "LINUX", "WIN32" ];
@@ -11,7 +11,6 @@ ACCEPTFLAGS = [ "BLITZ", "DEBUG", "GUI", "SHARED", "POSIX", "LINUX", "WIN32" ];
 RDEPEND = [
 	"DevCpp/BazaarCore",
 	"DevCpp/UppGeometry",
-	"MediaGfx/ComputerVision",
 	"DevUtil/UppBuilder"
 ];
 
@@ -20,6 +19,9 @@ src_unpack() {
 }
 
 src_compile() {
-	UppBuild("XRClient/XRClient");
-	UppBuild("SoftVR");
+	UppBuild("tests/XRCheck");
+}
+
+src_test() {
+	Run("XRCheck");
 }
